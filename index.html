@@ -10,23 +10,30 @@
 
 <header class="topbar">
   <h1>🍋 Lemon Drop</h1>
-  <span>AI Workspace</span>
+  <span>AI Workspace (Mock)</span>
 </header>
 
 <main class="container">
-  <!-- 파일 영역 -->
-  <section class="files">
-    <div class="file add" id="addFile">＋</div>
-  </section>
-
-  <!-- 드래그 타겟 영역 -->
-  <section class="actions">
-    <div class="action" data-action="PDF">PDF로 만들기</div>
-    <div class="action" data-action="요약">요약 만들기</div>
-    <div class="action" data-action="숏폼">숏폼 만들기</div>
-    <div class="action" data-action="마인드맵">마인드맵 만들기</div>
+  <section class="files" id="files">
+    <!-- 가짜 파일들 -->
+    <div class="file" draggable="true">📄 기획안_초안</div>
+    <div class="file" draggable="true">🎬 인터뷰_롱폼</div>
+    <div class="file" draggable="true">🌐 서비스_웹사이트</div>
+    <div class="file" draggable="true">💡 아이디어_메모</div>
+    <div class="file" draggable="true">📄 블로그_글</div>
+    <div class="file" draggable="true">🎥 제품_데모영상</div>
   </section>
 </main>
+
+<!-- 드래그 시 등장하는 오버레이 -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box">
+    <div class="action">PDF 만들기</div>
+    <div class="action">요약 만들기</div>
+    <div class="action">숏폼 만들기</div>
+    <div class="action">마인드맵 만들기</div>
+  </div>
+</div>
 
 <script src="app.js"></script>
 </body>
