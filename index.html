@@ -2,57 +2,32 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lemon Drop — AI Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lemon Drop</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">🍋</div>
-      <div>
-        <div class="title">Lemon Drop</div>
-        <div class="subtitle">AI Workspace</div>
-      </div>
-    </div>
-  </header>
 
-  <main class="layout">
-    <section class="panel">
-      <h2>Inbox</h2>
-      <p class="hint">글, 링크, 아이디어를 넣고 드래그해서 활용</p>
+<header class="topbar">
+  <h1>🍋 Lemon Drop</h1>
+  <span>AI Workspace</span>
+</header>
 
-      <div class="composer">
-        <select id="type">
-          <option value="text">글/메모</option>
-          <option value="url">웹사이트</option>
-          <option value="video">롱폼 영상</option>
-          <option value="idea">아이디어</option>
-        </select>
-        <input id="content" placeholder="내용 입력" />
-        <button id="btnAdd">추가</button>
-      </div>
+<main class="container">
+  <!-- 파일 영역 -->
+  <section class="files">
+    <div class="file add" id="addFile">＋</div>
+  </section>
 
-      <div id="inbox" class="grid"></div>
-    </section>
+  <!-- 드래그 타겟 영역 -->
+  <section class="actions">
+    <div class="action" data-action="PDF">PDF로 만들기</div>
+    <div class="action" data-action="요약">요약 만들기</div>
+    <div class="action" data-action="숏폼">숏폼 만들기</div>
+    <div class="action" data-action="마인드맵">마인드맵 만들기</div>
+  </section>
+</main>
 
-    <section class="panel">
-      <h2>Workbench</h2>
-      <div id="workbench" class="dropzone">
-        <div class="dropzone-empty">여기로 드래그</div>
-      </div>
-
-      <div class="tools">
-        <button data-tool="pdf">PDF</button>
-        <button data-tool="summary">요약</button>
-        <button data-tool="shortform">숏폼</button>
-        <button data-tool="mindmap">마인드맵</button>
-      </div>
-
-      <pre id="outputBox"></pre>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
