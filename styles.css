@@ -17,60 +17,61 @@ body {
 /* 파일 카드 */
 .files {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 20px;
-  margin-bottom: 40px;
 }
 
 .file {
   background: #1a1c27;
   border-radius: 16px;
-  padding: 20px 12px;
+  padding: 24px 12px;
   text-align: center;
   cursor: grab;
-  user-select: none;
-}
-
-.file .icon {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.file .name {
-  font-size: 14px;
-}
-
-.file.selected {
-  outline: 2px solid #ffe066;
-}
-
-.file.add {
-  border: 2px dashed #333;
-  color: #777;
-  font-size: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-/* 액션 영역 */
-.actions {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.action {
-  padding: 18px;
-  border-radius: 14px;
-  border: 2px dashed #333;
-  text-align: center;
-  color: #bbb;
+  font-size: 15px;
   transition: 0.2s;
 }
 
-.action.dragover {
+.file:hover {
+  background: #24284a;
+}
+
+/* 오버레이 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background: #11131a;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+.action {
+  padding: 20px;
+  border-radius: 14px;
+  border: 2px dashed #444;
+  text-align: center;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.2s;
+}
+
+.action:hover {
   border-color: #ffe066;
   background: rgba(255,224,102,0.1);
   color: #fff;
