@@ -3,7 +3,10 @@ const overlay = document.getElementById("overlay");
 
 /* 파일 드래그 시작 */
 files.forEach(file => {
-  file.addEventListener("dragstart", () => {
+  file.addEventListener("dragstart", e => {
+    // 🔑 이 한 줄이 핵심
+    e.dataTransfer.setData("text/plain", "file");
+
     file.classList.add("dragging");
     overlay.classList.add("active");
   });
