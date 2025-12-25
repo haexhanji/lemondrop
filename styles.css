@@ -11,28 +11,56 @@ body {
 }
 
 .container {
-  padding: 24px;
+  padding: 28px;
+}
+
+/* 파일 영역 */
+.files {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
 }
 
 /* 파일 카드 */
-.files {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
-}
-
 .file {
+  position: relative;
   background: #1a1c27;
-  border-radius: 16px;
-  padding: 24px 12px;
+  border-radius: 20px;
+  padding: 44px 16px 24px;
   text-align: center;
   cursor: grab;
-  font-size: 15px;
-  transition: 0.2s;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.file:hover {
-  background: #24284a;
+/* 드래그 중 들림 효과 */
+.file.dragging {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  cursor: grabbing;
+}
+
+/* 폴더 탭 */
+.folder-tab {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 52px;
+  height: 14px;
+  background: #2a2d45;
+  border-radius: 0 0 8px 8px;
+}
+
+/* 아이콘 */
+.file-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+/* 파일명 */
+.file-name {
+  font-size: 14px;
+  opacity: 0.9;
+  word-break: keep-all;
 }
 
 /* 오버레이 */
@@ -54,20 +82,21 @@ body {
 .overlay-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 18px;
   background: #11131a;
-  padding: 24px;
-  border-radius: 20px;
+  padding: 28px;
+  border-radius: 22px;
   border: 1px solid #333;
 }
 
+/* 액션 카드 */
 .action {
-  padding: 20px;
-  border-radius: 14px;
+  padding: 22px;
+  border-radius: 16px;
   border: 2px dashed #444;
   text-align: center;
-  cursor: pointer;
   color: #ccc;
+  cursor: pointer;
   transition: 0.2s;
 }
 
